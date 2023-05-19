@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Comparator;
 
 public class University {
     private ArrayList<Person> persons=new ArrayList<>();
@@ -23,13 +22,28 @@ public class University {
         return result;
     }
     public Person getOldestPerson(){
-        persons.sort(Comparator.comparing(Person::getAge).reversed());
-        return persons.get(0);
+        int max=0;
+        Person output = null;
+        for(Person per:persons){
+            if(per.getAge()>max){
+                max=per.getAge();
+                output=per;
+            }
+        }
+        return output;
+
 
     }
     public Person getYoungestPerson(){
-        persons.sort(Comparator.comparing(Person::getAge));
-        return persons.get(0);
+        int min=Integer.MAX_VALUE;
+        Person output = null;
+        for(Person per:persons){
+            if(per.getAge()<min){
+                min=per.getAge();
+                output=per;
+            }
+        }
+        return output;
 
     }
 
