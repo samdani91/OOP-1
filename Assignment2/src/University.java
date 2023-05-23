@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 public class University {
-    private ArrayList<Person> persons=new ArrayList<>();
+    private ArrayList<Person> persons;
 
-    University(ArrayList<Person>list){
-        persons=list;
+    University(ArrayList<Person>persons){
+        this.persons=persons;
     }
     public String getFullName(){
         String result="";
