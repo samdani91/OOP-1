@@ -7,19 +7,12 @@ public class University {
         this.persons=persons;
     }
     public String getFullName(){
-        String result="";
-
-        boolean flag=true;
+        StringBuilder result= new StringBuilder();
 
         for(Person per:persons){
-            if(flag){
-                result=per.getFullName();
-                flag=false;
-                continue;
-            }
-            result=result+","+per.getFullName();
+            result.append(per.getFullName().concat(","));
         }
-        return result;
+        return result.toString();
     }
     public Person getOldestPerson(){
         int max=0;
